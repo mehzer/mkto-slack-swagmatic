@@ -3,10 +3,10 @@ from marketorestpython.client import MarketoClient
 from slackclient import SlackClient
 import os
 
-SLACK_WEBHOOK_SECRET = os.environ.get('SLACK_WEBHOOK_SECRET')
-MUNCHKIN_ID = os.environ.get('MUNCHKIN_ID')
-MKTO_CLIENT_ID = os.environ.get('MKTO_CLIENT_ID')
-MKTO_CLIENT_SECRET = os.environ.get('MKTO_CLIENT_SECRET')
+SLACK_WEBHOOK_SECRET = os.environ.get('SLACK_WEBHOOK_SECRET','')
+MUNCHKIN_ID = os.environ.get('MUNCHKIN_ID','')
+MKTO_CLIENT_ID = os.environ.get('MKTO_CLIENT_ID','')
+MKTO_CLIENT_SECRET = os.environ.get('MKTO_CLIENT_SECRET','')
 
 availableSwag = {'habitat': 29485}
 
@@ -50,4 +50,4 @@ def processRequest(swagList, leadName):
     return reply
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True,host='0.0.0.0')

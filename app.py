@@ -37,7 +37,7 @@ def processRequest(swagList, leadName):
         mc = MarketoClient(MUNCHKIN_ID, MKTO_CLIENT_ID, MKTO_CLIENT_SECRET)
         lead = mc.execute(method='get_multiple_leads_by_filter_type', filterType='email', filterValues=[leadName], fields=['id', 'firstName','lastName'])
         if len(lead) > 0:
-            added = mc.execute(method='add_leads_to_list', listId=29485, id=[lead[0]['id']])
+            added = mc.execute(method='add_leads_to_list', listId=availableSwag[swagList], id=[lead[0]['id']])
             if(added[0]['status'])=='added':
                 reply = "Sending " +swagList +" swag to " + leadName
             else:

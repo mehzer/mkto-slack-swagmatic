@@ -8,7 +8,7 @@ MUNCHKIN_ID = os.environ.get('MUNCHKIN_ID','')
 MKTO_CLIENT_ID = os.environ.get('MKTO_CLIENT_ID','')
 MKTO_CLIENT_SECRET = os.environ.get('MKTO_CLIENT_SECRET','')
 
-availableSwag = {'habitat': 29485}
+availableSwag = {'habitat': 32110}
 
 app = Flask(__name__)
 
